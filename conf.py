@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'MySocket'
-copyright = '2020, Mysocket.io'
+copyright = '2020, mysocket.io'
 author = 'Andree Toonk'
 
 
