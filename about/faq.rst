@@ -7,7 +7,7 @@ FAQ
 +++
 
 .. note::  The
-           contents are available on `Github <https://github.com/atoonk/mysocketdocs/blob/master/about/faq.rst>`_,
+           contents are available on `Github <https://github.com/mysocketio/docs/blob/master/about/faq.rst>`_,
            allowing you to send a pull request with edits or additions, or fork the
            contents for usage elsewhere.
 

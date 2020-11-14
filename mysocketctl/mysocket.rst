@@ -32,7 +32,7 @@ The goal is for the documentation to be continuously updated and improved.
 
 .. note:: You can contribute to this documentation by opening an issue
           or sending patches via pull requests on the `GitHub
-          source repository <https://github.com/atoonk/mysocketdocs/>`_.
+          source repository <https://github.com/mysocketio/docs/>`_.
 
 
 Installing Mysocketctl

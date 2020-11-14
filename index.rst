@@ -1,8 +1,3 @@
-.. MySocket documentation master file, created by
-   sphinx-quickstart on Mon Nov  9 11:42:36 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to MySocket's documentation!
 ====================================
 Welcome to the documentation for Mysocket.io, a service that provides you with 
@@ -12,7 +7,7 @@ fast and secure network connectivity whenever you need it, wherever you are.
           We always appreciate your feedback and improvements.
 
           You can submit an issue or pull request on the `GitHub repository
-          <https://github.com/atoonk/mysocketdocs/>`_, 
+          <https://github.com/mysocketio/docs/>`_, 
 
 The main documentation is organized into the following sections:
 
