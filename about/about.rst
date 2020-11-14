@@ -23,7 +23,7 @@ The goal is for the documentation to be continuously updated and improved.
           or sending patches via pull requests on the `GitHub
           source repository <https://github.com/mysocketio/docs/>`_.
 
-Quick start start
+Quick start
 =========================
 More documentation can be found below; but if you're eager to get started, consider this a quick start.
 Download the mysocketctl (MacOSx and Linux)
