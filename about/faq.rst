@@ -14,7 +14,7 @@ FAQ
 
 What is Mysocket?
 ====================
-xxx
+Mysocket.io, a service that provides you with fast and secure network connectivity whenever you need it, wherever you are.
 
 What can I do with Mysocket?
 ====================
