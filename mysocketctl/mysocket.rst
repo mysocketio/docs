@@ -37,16 +37,8 @@ The goal is for the documentation to be continuously updated and improved.
 
 Installing Mysocketctl
 ============
-The code for mysocketctl can be found here ... 
-
-The quick way, download the executable
--------------------------------
-For those who want to get started quickly a binary for Mac OSx and Linux is available. 
-
-::
-
-    curl ...
-    chmod +x ./mysocketctl
+The code for mysocketctl can be found here: https://github.com/mysocketio/mysocketctl
+The easiest way to install it, is using python's packaga manager ``pip``
 
 
 Using Pip
