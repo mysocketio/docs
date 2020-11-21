@@ -30,7 +30,7 @@ Download the mysocketctl (MacOSx and Linux)
 Create an account:
 ::
 
-    mysocketctl.py account create \
+    mysocketctl account create \
         --name "your_name" \
         --email "your_email_address" \
         --password "a_secure_password" \
@@ -39,13 +39,13 @@ Create an account:
 After confirming your new account (check your email), login and retrieve an access token:
 ::
 
-    mysocketctl.py login --email \
+    mysocketctl login --email \
         --email "your_email_address" \
         --password "a_secure_password" \
 
 Now you’re ready to use the “quick connect” feature to connect your local service listening on port 8000  to the Internet:
 ::
-    mysocketctl.py connect \
+    mysocketctl connect \
         --port 8000 \
         --name "my test service"
 

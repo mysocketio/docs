@@ -10,8 +10,8 @@ Using ``mysocketctl`` users can create and manage their account, as well as mana
 
 ::
 
-    $ mysocketctl.py
-    Usage: mysocketctl.py [OPTIONS] COMMAND [ARGS]...
+    $ mysocketctl
+    Usage: mysocketctl [OPTIONS] COMMAND [ARGS]...
 
     Options:
     --help  Show this message and exit.
@@ -61,8 +61,8 @@ Account management and login
 
 ::
 
-    $ mysocketctl.py account --help
-    Usage: mysocketctl.py account [OPTIONS] COMMAND [ARGS]...
+    $ mysocketctl account --help
+    Usage: mysocketctl account [OPTIONS] COMMAND [ARGS]...
 
     Create a new account or see account information.
 
@@ -87,7 +87,7 @@ Make sure to upload your public key only.
 
 ::
 
-    mysocketctl.py account create \
+    mysocketctl account create \
         --name "your_name" \
         --email "your_email_address" \
         --password "a_secure_password" \
@@ -100,7 +100,7 @@ Logging in and get a token
 --------------------------------
 In order to use the service please login like below
 ::
-    mysocketctl.py login \
+    mysocketctl login \
         --email "your_email_address" \
         --password "a_secure_password" \
 
@@ -136,8 +136,8 @@ The quick-connect function allows users to quickly, ie. in one command:
 This quick connect feature is useful for when you want to make a local service available quickly. Later on we’ll look at how to configure and manage all the individual components.
 Every time the connect feature is used, a new socket and, corresponding DNS name is created. If you need more permanent names, please look at creating sockets and tunnels separately. 
 ::
-    mysocketctl.py connect --help
-    Usage: mysocketctl.py connect [OPTIONS]
+    mysocketctl connect --help
+    Usage: mysocketctl connect [OPTIONS]
 
     Quckly connect, Wrapper around sockets and tunnels
 
@@ -156,7 +156,7 @@ Mysocket.io will automatically create a socket with a DNS name for you. It will 
 
 ::
 
-    mysocketctl.py connect \
+    mysocketctl connect \
         --port 8000 \
         --name "my test service"
     +--------------------------------------+--------------------------------------+-----------------+
@@ -209,7 +209,7 @@ There are three types of socket supported today:
 ::
 
     mysocketctl socket --help
-    Usage: mysocketctl.py socket [OPTIONS] COMMAND [ARGS]...
+    Usage: mysocketctl socket [OPTIONS] COMMAND [ARGS]...
 
     Manage your global sockets
 
@@ -225,7 +225,7 @@ Creating sockets
 --------------------
 The command below creates an http socket of type http. It returns the socket_id and dns name. 
 ::
-    mysocketctl.py socket create \
+    mysocketctl socket create \
         --name "my local http service" \
         --type http
     +--------------------------------------+-----------------------------------+---------+------+-----------------------+
@@ -236,7 +236,7 @@ The command below creates an http socket of type http. It returns the socket_id 
 
 For http based services, we can add password protection to the socket. This means that the user will see a username password window before visiting your socket service. Below an example of creating a password-protected socket, with username john and password secret.
 ::
-    mysocketctl.py socket create \
+    mysocketctl socket create \
         --name "my local http service" \
         --type http \
         --protected \
@@ -262,7 +262,7 @@ To see all your socket, issue the socket ls command like below:
 
 ::
 
-    mysocketctl.py socket ls
+    mysocketctl socket ls
     +--------------------------------------+-----------------------------------------+------+---------+-----------------------+
     | socket_id                            | dns_name                                | type | port(s) | name                  |
     +--------------------------------------+-----------------------------------------+------+---------+-----------------------+
@@ -276,7 +276,7 @@ Delete sockets
 ----------------------
 To delete a socket, issue the socket delete command and provide the socket_id you wish to delete.
 ::
-    mysocketctl.py socket delete \
+    mysocketctl socket delete \
         --socket_id 5870a362-65d3-474d-bbf6-3341827eaee0
 
     Socket 5870a362-65d3-474d-bbf6-3341827eaee0 deleted
@@ -288,8 +288,8 @@ In this section, we’ll explain how to manage tunnels and how to connect the tu
 Note that a socket can have multiple tunnels. In that case mysocket will load balance over all available tunnels.
 ::
 
-    mysocketctl.py tunnel --help
-    Usage: mysocketctl.py tunnel [OPTIONS] COMMAND [ARGS]...
+    mysocketctl tunnel --help
+    Usage: mysocketctl tunnel [OPTIONS] COMMAND [ARGS]...
 
     Manage your tunnels
 
@@ -306,7 +306,7 @@ Creating a tunnel
 ---------------------
 The command below creates a new tunnel for a socket we create earlier. 
 ::
-    mysocketctl.py tunnel create \
+    mysocketctl tunnel create \
         --socket_id 334c2e48-8324-47c0-9b03-c0a69c2c7833
     +--------------------------------------+--------------------------------------+---------------+------------+
     | socket_id                            | tunnel_id                            | tunnel_server | relay_port |
@@ -320,7 +320,7 @@ Listing all tunnels for a socket
 --------------------------------
 To see all tunnels for a socket, issue the ``mysocket tunnel ls`` command like below:
 ::
-    mysocketctl.py tunnel ls \
+    mysocketctl tunnel ls \
         --socket_id 334c2e48-8324-47c0-9b03-c0a69c2c7833
     +--------------------------------------+--------------------------------------+---------------+------------+
     | socket_id                            | tunnel_id                            | tunnel_server | relay_port |
@@ -335,7 +335,7 @@ Deleting a tunnel
 ---------------------
 To delete a tunnel, issue the tunnel delete command and provide the socket_id and tunnel_id you wish to delete.
 ::
-    mysocketctl.py tunnel delete \
+    mysocketctl tunnel delete \
         --socket_id 334c2e48-8324-47c0-9b03-c0a69c2c7833 \
         --tunnel_id dc620ec5-76d6-455e-865c-eac238472bee
 
@@ -347,8 +347,8 @@ Connecting and using a tunnel
 
 In order to spin up your tunnel, the ``mysocketctl tunnel connect`` feature may be used.
 ::
-    mysocketctl.py tunnel connect --help
-    Usage: mysocketctl.py tunnel connect [OPTIONS]
+    mysocketctl tunnel connect --help
+    Usage: mysocketctl tunnel connect [OPTIONS]
 
     Options:
     --socket_id TEXT  [required]
@@ -360,7 +360,7 @@ It requires socket_id and tunnel_id as mandatory arguments. It also needs to kno
 For example, if you have a local webservice, you want to make publicly available using this tunnel in port 8000 then provide 8000 as the ``--port`` parameter.
 If you wanted to make ssh available and the socket you created is of type TCP, then provide port 22 as the port parameter.
 ::
-    mysocketctl.py tunnel connect \
+    mysocketctl tunnel connect \
         --socket_id 334c2e48-8324-47c0-9b03-c0a69c2c7833 \
         --tunnel_id 4f1d5c81-1531-4b93-9343-76b5c16194dc \
         --port 8000
