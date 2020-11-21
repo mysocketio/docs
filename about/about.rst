@@ -39,7 +39,7 @@ Create an account:
 After confirming your new account (check your email), login and retrieve an access token:
 ::
 
-    mysocketctl login --email \
+    mysocketctl login \
         --email "your_email_address" \
         --password "a_secure_password" \
 
