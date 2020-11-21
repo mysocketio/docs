@@ -41,7 +41,7 @@ After confirming your new account (check your email), login and retrieve an acce
 
     mysocketctl login \
         --email "your_email_address" \
-        --password "a_secure_password" \
+        --password "a_secure_password" 
 
 Now you’re ready to use the “quick connect” feature to connect your local service listening on port 8000  to the Internet:
 ::
