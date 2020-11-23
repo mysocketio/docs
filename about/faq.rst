@@ -39,6 +39,7 @@ Today support is best effort.
 Q: How do I get started with Mysocket?
 ====================
 The best way to get started is to follow the details in this blog: https://www.mysocket.io/post/introducing-mysocket
+or see: https://mysocket.readthedocs.io/en/latest/about/about.html#quick-start
 
 Q: What kind of transport security is used between the mysocket.io and the origin.
 ====================
