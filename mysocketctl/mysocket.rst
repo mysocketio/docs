@@ -310,7 +310,7 @@ Note that the mysocket API returned a tunnel_id and a relay port. The relay port
 
 Listing all tunnels for a socket
 --------------------------------
-To see all tunnels for a socket, issue the ``mysocket tunnel ls`` command like below:
+To see all tunnels for a socket, issue the ``mysocketctl tunnel ls`` command like below:
 ::
     mysocketctl tunnel ls \
         --socket_id 334c2e48-8324-47c0-9b03-c0a69c2c7833
