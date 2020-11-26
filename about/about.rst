@@ -78,9 +78,9 @@ Features
 Stable public DNS names and port numbers for your private apps. 
 
 Supports various socket types, including:
-    1. http
+    1. HTTP
 
-    2. https
+    2. HTTPS
 
     3. TCP
 
@@ -91,7 +91,7 @@ Options for SSL/TLS Encryption for your sockets
 
 All sockets run on a global anycast network, reducing latency and improving the user experience.
 
-Username and Password protected (http/https) Sockets 
+Username and Password protected (HTTP/HTTPS) Sockets 
 
 Live Stream of logs. We show you all requests in real-time, including the latency between our anycasted nodes and your origin server.
 
