@@ -75,6 +75,12 @@ If you don’t know how to create an ssh key pair, please see this link:
 
 https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
 
+Note: If you prefer to create and use an exclusive ssh key for mysocket.io, you will have to create a special rule in your ssh config file (~/.ssh/config in Linux) for the tunnel host:
+
+::
+    Host ssh.mysocket.io
+        IdentityFile ~/.ssh/mysocketio_key
+
 Make sure to upload your public key only.
 
 ::
