@@ -1,7 +1,9 @@
 Welcome to MySocket's documentation!
 ====================================
 Welcome to the documentation for Mysocket.io, a service that provides you with 
-fast and secure network connectivity whenever you need it, wherever you are.  
+fast and secure network connectivity whenever you need it, wherever you are. 
+
+Mysocket provides load balancing and secures application traffic at the edge. 
 
 .. note:: This documentation is an open source project. 
           We always appreciate your feedback and improvements.
