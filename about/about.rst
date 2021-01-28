@@ -12,6 +12,8 @@ fast and secure network connectivity whenever you need it, wherever you are.
 About Mysocket
 ----------------------------------------
 Mysocket.io is a service that provides public endpoints for services that are otherwise not publicly reachable. A typical example is a web service running on your laptop, which you’d like to make available to your client. Or ssh access to servers behind NAT or a firewall, like a raspberry pi on your home network. Mysocket.io is a fully managed cloud service, so nothing to run!
+Mysocket also provides OpenIDConnect and Saml authentication options, allowing for zero trust deployments.
+
 
 
 About this Documentation
@@ -26,7 +28,7 @@ The goal is for the documentation to be continuously updated and improved.
 Quick start
 =========================
 More documentation can be found below; but if you're eager to get started, consider this a quick start.
-Download the mysocketctl (MacOSx and Linux)
+Download the mysocketctl client from our `download page <http://download.edge.mysocket.io/>`_
 Create an account:
 ::
 
@@ -34,7 +36,7 @@ Create an account:
         --name "your_name" \
         --email "your_email_address" \
         --password "a_secure_password" \
-        --sshkey "$(cat ~/.ssh/id_rsa.pub)"
+        --sshkey ~/.ssh/id_rsa.pub
 
 After confirming your new account (check your email), login and retrieve an access token:
 ::
@@ -43,22 +45,31 @@ After confirming your new account (check your email), login and retrieve an acce
         --email "your_email_address" \
         --password "a_secure_password" 
 
+or just ``mysocketctl login``:
+::
+
+    $ mysocketctl login
+    Email: atoonk@example.com
+    Password:
+    Login successful
+
+
 Now you’re ready to use the “quick connect” feature to connect your local service listening on port 8000  to the Internet:
 ::
     mysocketctl connect \
         --port 8000 \
         --name "my test service"
 
-    +--------------------------------------+---------------------------------+-----------------+
-    |              socket_id               |             dns_name            |       name      |
-    +--------------------------------------+---------------------------------+-----------------+
-    | 24cd3fa2-b56a-486f-a554-30924bae54d0 | long-hill-8399.edge.mysocket.io | my test service |
-    +--------------------------------------+---------------------------------+-----------------+
+    ┌──────────────────────────────────────┬───────────────────────────────────┬─────────┬──────┬────────────┬─────────────────┐
+    │ SOCKET ID                            │ DNS NAME                          │ PORT(S) │ TYPE │ CLOUD AUTH │ NAME            │
+    ├──────────────────────────────────────┼───────────────────────────────────┼─────────┼──────┼────────────┼─────────────────┤
+    │ 6be8287f-cf55-4e29-a7c8-4960166ac609 │ green-voice-5562.edge.mysocket.io │ 80, 443 │ http │ false      │ my test service │
+    └──────────────────────────────────────┴───────────────────────────────────┴─────────┴──────┴────────────┴─────────────────┘
 
     Connecting to Server: ssh.mysocket.io
 
     Welcome to Mysocket.io!
-    my test service - https://long-hill-8399.edge.mysocket.io
+    my test service - https://green-voice-5562.edge.mysocket.io
 
     =======================================================
     Logs
@@ -86,6 +97,7 @@ Supports various socket types, including:
 
     4. TLS
 
+Zero trust: Support for OpenIDConnect authentication. protect your sockets with authentication. Login with your favorite idendity provider (Google, Facebook, Github)
 
 Options for SSL/TLS Encryption for your sockets
 
@@ -99,11 +111,27 @@ Support for multiple origins per socket, ie. Load Balancing
 
 Build on a global anycast network
 ================================
-Mysocket.io is built on a global anycasted network of **91 Points of Presence in 80 cities across 42 countries.** This helps you improve the availability and performance of the applications that you offer to your global users.  
+Mysocket.io is built on a global anycasted network of **94 Points of Presence in 82 cities across 44 countries.** This helps you improve the availability and performance of the applications that you offer to your global users.  
 Mysocket.io application services connect to use anycast network using various servers in North America, Europe, and Asia.  All this provides us with the best possible low latency user experience and Instant regional failover, which results in an incredible level of high availability.
 
 Example use cases
 =========================
+
+Zero Trust
+-----------------------------
+With our `Identity Aware sockets <https://www.mysocket.io/post/introducing-identity-aware-sockets-enabling-zero-trust-access-for-your-private-services>`_ you can provide access to your private (on prem) services, without the need for a VPN. 
+Mysocket can act as a VPN alternative. No software is needed on the client, all the while  authentication and authorization options are making sure your private resources are only available to those who should have access.
+
+Kubernetes public load balancer
+-----------------------------
+Provide a load balancer service with a public anycasted IP for your Kubernetes workloads.
+`As easy as installing the mysocket.io k8 controller. <https://www.mysocket.io/post/global-load-balancing-with-kubernetes-and-mysocket>`_
+
+Easy Multi-region load balancing
+-----------------------------
+Spin up your origin services over multiple cloud providers and regions and have the mysocket edge network front and secure your traffic.
+`Load balancing over multiple regions and cloud providers has never been easier. <https://www.mysocket.io/post/easy-multi-region-load-balancing-with-mysocket-as-a-load-balancer>`_
+
 
 Make the local web service on your laptop available to your colleagues or client.
 -----------------------------

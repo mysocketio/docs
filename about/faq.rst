@@ -20,6 +20,22 @@ What can I do with Mysocket?
 ====================
 There are many examples, but in short you can extend reachability to TCP sockets that run within your network or just your laptop, to a global audiance. 
 
+What are identity aware sockets?
+====================
+These are sockets that are aware of the visitor's identity. If your socket is enabled for "cloud authentication," all visitors will be prompted to authenticate first. Authentication can be completed using the various social Identity providers (Google, Github, Facebook), as well as local accounts. As the owner of the socket, you can then specify authorization rules, allowing only authenticated users with certain email domains or specific email addresses.
+For more information see this article `identity-aware sockets <https://www.mysocket.io/post/introducing-identity-aware-sockets-enabling-zero-trust-access-for-your-private-services>`_
+
+what happened to the Python client?
+====================
+We changed out the python3 mysocketctl client in favor of the new Golang mysocketctl client. 
+The python code is still available and can be installed using ``pip3 install mysocketctl``
+The python code can be found here:
+https://github.com/mysocketio/mysocketctl
+
+It's recommended, however, to use the Go client, which can be downloaded here: https://download.edge.mysocket.io/
+
+
+
 What performance improvement does Mysocket provide?
 ====================
 Because mysocket is an anycasted service, both the end-user and the tunnel connection is automatically terminated at the nearest mysocket server. 
