@@ -88,23 +88,16 @@ Account management and login
 
 Creating an account
 ---------------------------
-To use mysocket.io users will need to register and create an account. 
-Use the following command to create an account. Make sure to use a valid email address as we’ll use it to send you an email to validate your account.
+To use mysocket.io users will need to register and create an account.  The easiest way to create an account is to use the portal: https://portal.mysocket.io/register
 
-We need an ssh public key as well, this is what we later use to setup and authenticate tunnels. 
-If you don’t know how to create an ssh key pair, please see this link:
-
-https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
-
-Make sure to upload your public key only.
+Alternatvly, you can also use mysocketctl to create an account. Make sure to use a valid email address as we’ll use it to send you an email to validate your account.
 
 ::
 
     mysocketctl account create \
             --name "your_name" \
             --email "your_email_address" \
-            --password "a_secure_password" \
-            --sshkey ~/.ssh/id_rsa.pub
+            --password "a_secure_password" 
 
 You should receive an email now with a confirmation link. Please click the link to validate your email account. After that, you can login
 
