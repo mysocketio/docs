@@ -29,14 +29,15 @@ Quick start
 =========================
 More documentation can be found below; but if you're eager to get started, consider this a quick start.
 Download the mysocketctl client from our `download page <http://download.edge.mysocket.io/>`_
+
+Accounts can be created online, using the portal here: https://portal.mysocket.io/register, or using the cli
 Create an account:
 ::
 
     mysocketctl account create \
         --name "your_name" \
         --email "your_email_address" \
-        --password "a_secure_password" \
-        --sshkey ~/.ssh/id_rsa.pub
+        --password "a_secure_password" 
 
 After confirming your new account (check your email), login and retrieve an access token:
 ::
